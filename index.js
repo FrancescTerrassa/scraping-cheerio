@@ -6,8 +6,9 @@ import axios from 'axios'
 import * as cheerio from 'cheerio'
 import cors from 'cors'
 const app = express()
-
+// cors en llista blanca
 app.get('/',cors(), async (req, res) => {
+  console.log('entro cors');
   try {
     const { data } = await axios.get('https://www.bcentral.cl/inicio')
     const $ = cheerio.load(data)
